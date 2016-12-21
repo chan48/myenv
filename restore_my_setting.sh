@@ -25,10 +25,12 @@ cp -fv ./.zshrc ~/.zshrc
 cp -fv ./.vimrc ~/.vimrc
 
 # restore .ssh settings
-cp -fv ./.ssh/* ~/.ssh
+# 보안사항으로 실제 필요할때만 사용하자
+# cp -fv ./.ssh/* ~/.ssh
 
 # restore hosts settings
-sudo cp -fv hosts /etc/hosts
+# 보안사항으로 실제 필요할때만 사용하자
+#sudo cp -fv hosts /etc/hosts
 
 # install vimplugin
 sh ./installvimplugin.sh

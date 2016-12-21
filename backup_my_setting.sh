@@ -22,11 +22,13 @@ cp -v ~/.zshrc ./
 cp -v ~/.vimrc ./
 
 # backup .ssh directory
-mkdir -p .ssh
-cp -v ~/.ssh/* ./.ssh/
+# 보안사항으로 실제 필요할때만 사용하자
+# mkdir -p .ssh
+# cp -v ~/.ssh/* ./.ssh/
 
 # backup hosts
-cp -v /etc/hosts ./hosts
+# 보안사항으로 실제 필요할때만 사용하자
+#cp -v /etc/hosts ./hosts
 
 # backup vscode settings
 mkdir -p .vscode
