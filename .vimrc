@@ -36,6 +36,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'joshdick/onedark.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,6 +64,12 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " iterm -> non-ascii font 를 powerline 폰트로 변경해야함
 let g:airline_powerline_fonts = 1
 
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+" let g:indent_guides_enable_on_vim_startup = 1
+" :IndentGuidesToggle
+
 " 단축키 설정
 nmap <f5> :GoRun<cr>
 nmap <f7> :GoBuild<cr>
@@ -71,5 +78,6 @@ nmap <c-p> :GoImports<cr>
 nmap <f12> :TagbarToggle<cr>
 nmap <f10> :NERDTreeToggle<cr>
 nmap <f3> :FZF<cr>
+nmap <f4> :IndentGuidesToggle<cr>
 
 """""""""" ysoftman_settings_end

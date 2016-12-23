@@ -73,8 +73,7 @@ execute pathogen#infect()
 filetype plugin indent on
 ' >> ~/.vimrc
 
-# pathogen plugin 설정
-# 자동완성 기능 설치
+# YouCompleteMe
 # python-dev, cmake 설치되어있어야함
 # YCM 을 ~/.vim/bundle 에 다운 받는다
 # cd ~/.vim/bundle
@@ -83,51 +82,50 @@ filetype plugin indent on
 # git submodule update --init --recursive
 # sh ./install.sh
 
-# Tagbar (태그 창) 설치
+# Tagbar
 # vim 에서 :TagbarToggle 을 사용하면 오른쪽에 태그 창이 보인다.
 # ctags 설치되어 있어야함
 # Tagbar 을 ~/.vim/bundle 에 다운 받는다
 # cd ~/.vim/bundle
 # git clone https://github.com/majutsushi/tagbar.git
 
-# NertdTree (파일 브라우저) 설치
+# NertdTree
 # vim 에서 :NERDTreeToggle 을 사용하면 오른쪽에 태그 창이 보인다.
 # cd ~/.vim/bundle
 # git clone https://github.com/scrooloose/nerdtree.git
 
-# powerline font 설치(airline 꺽쇄 표시를 잘 표현하기 위해)
+# powerline font(airline 꺽쇄 표시를 잘 표현하기 위해)
 # cd ~/.vim/bundle
 # git clone https://github.com/powerline/fonts
 
-# airline 설치
+# airline
 # cd ~/.vim/bundle
 # git clone https://github.com/bling/vim-airline
 # git clone https://github.com/vim-airline/vim-airline
 
-# syntastic 설치
+# syntastic
 # cd ~/.vim/bundle
 # git clone https://github.com/scrooloose/syntastic
 
-# vim-colors-solarized 설치
+# vim-colors-solarized
 # cd ~/.vim/bundle
 # git clone https://github.com/altercation/vim-colors-solarized
 
-# ondeark 설치
+# ondeark
 # cd ~/.vim/bundle
 # git clone https://github.com/joshdick/onedark.vim
 
-# ctrlp 설치
+# ctrlp
 # ctrl + p 로 파일명 검색
 # cd ~/.vim/bundle
 # git clone https://github.com/kien/ctrlp.vim
 
-# fzf 설치
+# fzf
 # gem install curses
 # rm -rfv ~/.fzf
 # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
-# vim-go 을 ~/.vim/bundle 에 다운 받는다
-# vim-go 명령들
+# vim-go
 #:GoRun (go 실행)
 #:GoBuild (go 빌드)
 #:GoDoc (go 문서)
@@ -136,6 +134,10 @@ filetype plugin indent on
 #:GoImports (go 패키지 자동 임포트)
 # cd ~/.vim/bundle
 # git clone https://github.com/fatih/vim-go.git
+
+# vim-indent-guides
+# cd ~/.vim/bundle
+# git clone https://github.com/nathanaelkane/vim-indent-guides
 
 
 ########################
@@ -167,6 +169,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'joshdick/onedark.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf'
+Plugin 'nathanaelkane/vim-indent-guides'
 " >> ~/.vimrc
 echo 'call vundle#end()            " required
 filetype plugin indent on    " required
@@ -212,6 +215,14 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_powerline_fonts = 1
 " >> ~/.vimrc
 
+# vim-indent-guides
+echo "let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  ctermbg=black
+hi IndentGuidesEven ctermbg=darkgrey
+\" let g:indent_guides_enable_on_vim_startup = 1
+\" :IndentGuidesToggle
+" >> ~/.vimrc
+
 # fzf
 # ~/.fzf/install --all
 # [ -f ~/.fzf.bash ] && source ~/.fzf.bash
@@ -220,7 +231,6 @@ let g:airline_powerline_fonts = 1
 # " >> ~/.vimrc
 
 # 단축키 설정
-
 echo '" 단축키 설정
 nmap <f5> :GoRun<cr>
 nmap <f7> :GoBuild<cr>
@@ -229,6 +239,7 @@ nmap <c-p> :GoImports<cr>
 nmap <f12> :TagbarToggle<cr>
 nmap <f10> :NERDTreeToggle<cr>
 nmap <f3> :FZF<cr>
+nmap <f4> :IndentGuidesToggle<cr>
 ' >> ~/.vimrc
 
 # vim 실행 후 PluginInstall 로 Plugin 으로 설정한 플러그인 설치하고 모두 종료
