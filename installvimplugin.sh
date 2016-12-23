@@ -112,6 +112,9 @@ filetype plugin indent on
 # cd ~/.vim/bundle
 # git clone https://github.com/altercation/vim-colors-solarized
 
+# ondeark 설치
+# cd ~/.vim/bundle
+# git clone https://github.com/joshdick/onedark.vim
 
 # fzf 설치
 # gem install curses
@@ -156,6 +159,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'joshdick/onedark.vim'
 Plugin 'junegunn/fzf'
 " >> ~/.vimrc
 echo 'call vundle#end()            " required
@@ -178,11 +182,19 @@ set laststatus=2
 ' >> ~/.vimrc
 
 # vim-colors-solarized
-echo "syntax enable
-let g:solarized_termtrans = 1                                                   
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+# echo "syntax enable
+# let g:solarized_termtrans = 1
+# let g:solarized_termcolors=256
+# let g:solarized_contrast=\"high\"
+# let g:solarized_visibility=\"high\"
+# set background=dark
+# colorscheme solarized
+# " >> ~/.vimrc
+
+# onedark
+echo "syntax on
+let g:onedark_termcolors=256
+colorscheme onedark
 " >> ~/.vimrc
 
 # airline
