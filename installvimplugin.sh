@@ -50,14 +50,15 @@ mkdir -p ~/.vim/bundle
 # vimrc 백업하기
 TEMP_FILE="ysoftman_vimrc_backup.temp"
 # ysoftman_settings start ~ end 부분은 제외 하고 백업
-cat ~/.vimrc | sed "/^\" ysoftman_settings_start/,/^\" ysoftman_settings_end/d;" > ${TEMP_FILE}
+# cat ~/.vimrc | sed "/^\" ysoftman_settings_start/,/^\" ysoftman_settings_end/d;" > ${TEMP_FILE}
+cat ~/.vimrc | sed "/ysoftman_settings_start/,/ysoftman_settings_end/d;" > ${TEMP_FILE}
 # vimrc 다시 작성
 cat ${TEMP_FILE} > ~/.vimrc
 # TEMP_FILE 삭제
 rm -f ${TEMP_FILE}
 
 
-printf '" ysoftman_settings_start' >>  ~/.vimrc
+printf '"""""""""" ysoftman_settings_start' >>  ~/.vimrc
 
 ########################
 # vim 패키지(플러그인) 관지자 - pathogen 설치
@@ -94,25 +95,28 @@ filetype plugin indent on
 # cd ~/.vim/bundle
 # git clone https://github.com/scrooloose/nerdtree.git
 
+# powerline font 설치(airline 꺽쇄 표시를 잘 표현하기 위해)
+# cd ~/.vim/bundle
+# git clone https://github.com/powerline/fonts
+
 # airline 설치
 # cd ~/.vim/bundle
 # git clone https://github.com/bling/vim-airline
 # git clone https://github.com/vim-airline/vim-airline
-echo "set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-" >> ~/.vimrc
+
+# syntastic 설치
+# cd ~/.vim/bundle
+# git clone https://github.com/scrooloose/syntastic
+
+# vim-colors-solarized 설치
+# cd ~/.vim/bundle
+# git clone https://github.com/altercation/vim-colors-solarized
+
 
 # fzf 설치
 # gem install curses
 # rm -rfv ~/.fzf
 # git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install --all
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# echo "set rtp+=~/.fzf
-# " >> ~/.vimrc
 
 # vim-go 을 ~/.vim/bundle 에 다운 받는다
 # vim-go 명령들
@@ -147,16 +151,58 @@ Plugin 'valloric/youcompleteme'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
 Plugin 'fatih/vim-go'
+Plugin 'powerline/fonts'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'scrooloose/syntastic'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'junegunn/fzf'
 " >> ~/.vimrc
 echo 'call vundle#end()            " required
 filetype plugin indent on    " required
 ' >> ~/.vimrc
 
+########################
+# 사용자 설정
+echo '
+" 사용자 설정
+syntax on
+color elflord
+set number
+set hlsearch
+set backspace=indent,eol,start
+set fencs=utf-8,cp949
+set tabstop=4
+set autoindent
+set laststatus=2
+' >> ~/.vimrc
+
+# vim-colors-solarized
+echo "syntax enable
+let g:solarized_termtrans = 1                                                   
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
+" >> ~/.vimrc
+
+# airline
+echo "set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" >> ~/.vimrc
+
+# fzf
+# ~/.fzf/install --all
+# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# echo "set rtp+=~/.fzf
+# " >> ~/.vimrc
+
 # 단축키 설정
-echo 'nmap <f5> :GoRun<cr>
+
+echo '" 단축키 설정
+nmap <f5> :GoRun<cr>
 nmap <f7> :GoBuild<cr>
 nmap <c-i> :GoFmt<cr>
 nmap <c-p> :GoImports<cr>
@@ -170,4 +216,5 @@ vim +PluginInstall +qall
 # vim 실행 후 GoInstallBinaries 로 go 바이너리설치, $GOPATH/bin 에 필요한 파일들이 설치하고 모두 종료
 vim +GoInstallBinaries +qall
 
-echo '" ysoftman_settings_end' >>  ~/.vimrc
+# 참고, 뉴라인으로 끝나면 이 스크립트가 실행될때마다 뉴라인이 추가된다.
+echo '"""""""""" ysoftman_settings_end' >>  ~/.vimrc
