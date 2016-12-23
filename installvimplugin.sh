@@ -202,6 +202,8 @@ echo "set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+\" iterm -> non-ascii font 를 powerline 폰트로 변경해야함
+let g:airline_powerline_fonts = 1
 " >> ~/.vimrc
 
 # fzf
