@@ -116,6 +116,11 @@ filetype plugin indent on
 # cd ~/.vim/bundle
 # git clone https://github.com/joshdick/onedark.vim
 
+# ctrlp 설치
+# ctrl + p 로 파일명 검색
+# cd ~/.vim/bundle
+# git clone https://github.com/kien/ctrlp.vim
+
 # fzf 설치
 # gem install curses
 # rm -rfv ~/.fzf
@@ -160,6 +165,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'joshdick/onedark.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'junegunn/fzf'
 " >> ~/.vimrc
 echo 'call vundle#end()            " required
