@@ -23,22 +23,23 @@ elif [ $(uname) == 'Linux' ]; then
 	sudo ${package_program} install zsh python-pip ruby ncurses ncurses-devel
 	
 	# zsh 버전이 낮으면 소스 다운로드 받아 설치하기
-	cur_version="zsh --version | cut -d" " -f2"
-	compare_version="5.0.0"
-	echo 'cur_version='${cur_version}
-	echo 'compare_version='${compare_version}
-	highest_version="$(echo "${cur_version}\n${compare_version}" | sort -r | head -n1)"
-	echo 'highest_version='${highest_version}
-	if [ "${highest_version}" == "${compare_version}" ]; then
-		echo "${compare_version} > ${cur_version}"
-		wget http://sourceforge.net/projects/zsh/files/zsh/5.0.2/zsh-5.0.2.tar.bz2/download zsh-5.0.2.tar.bz2
-		tar xvjf zsh-5.0.2.tar.bz2
-		cd zsh-5.0.2
-		./configure && make && sudo make install
-		/usr/local/bin/zsh --version				
-	else
-		echo "${compare_version} < ${cur_version}"
-	fi
+    cur_version="$(zsh --version | cut -d" " -f2)"
+    compare_version="5.0.0"
+    echo 'cur_version='${cur_version}
+    echo 'compare_version='${compare_version}
+    highest_version="$(printf "${cur_version}\n${compare_version}" | sort -r | head -n1)"
+    echo 'highest_version='${highest_version}
+    if [ "${highest_version}" == "${compare_version}" ]; then
+        echo "${compare_version} > ${cur_version}"
+        curl -OL https://sourceforge.net/projects/zsh/files/zsh/5.1/zsh-5.1.tar.gz/download
+        mv download zsh-5.1.tar.gz
+        tar zxvf zsh-5.1.tar.gz
+        cd zsh-5.1
+        ./configure && make && sudo make install
+        /usr/local/bin/zsh --version
+    else
+        echo "${compare_version} < ${cur_version}"
+    fi
 	
 else
 	echo 'Only OS-X or Linux... exit'
