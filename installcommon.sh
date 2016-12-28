@@ -20,7 +20,7 @@ elif [ $(uname) == 'Linux' ]; then
 	else
 		package_program="apt-get"
 	fi
-	sudo ${package_program} zsh python-pip ruby
+	sudo ${package_program} install zsh python-pip ruby
 else
 	echo 'Only OS-X or Linux... exit'
 	exit
