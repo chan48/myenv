@@ -8,6 +8,7 @@ code --install-extension alefragnani.Bookmarks
 code --install-extension dcr30.lualinter
 code --install-extension djabraham.vscode-yaml-validation
 code --install-extension donjayamanne.python
+code --install-extension fallenwood.vimL
 code --install-extension itryapitsin.Scala
 code --install-extension lukehoban.Go
 code --install-extension magicstack.MagicPython

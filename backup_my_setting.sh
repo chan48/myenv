@@ -11,6 +11,7 @@ brew list | sort | tr '\n' ' ' >> ${install_file}
 # backup my pip list and make install script
 install_file="installbypip.sh"
 echo '#!/bin/sh' > ${install_file}
+echo 'pip install --upgrade pip' >> ${install_file}
 printf "pip install " >> ${install_file}
 pip list | awk '{print $1}' | tr '\n' ' ' >> ${install_file}
 
