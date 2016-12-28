@@ -5,7 +5,10 @@ if [ $(uname) == 'Darwin' ]; then
 	echo 'OSX Environment'
     # brew 설치
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-	brew install zsh python-pip
+	# zsh 설치
+	brew install zsh
+	# pip 설치
+	sudo easy_install pip
 elif [ $(uname) == 'Linux' ]; then
 	echo 'Linux Environment'
 	# yum 실행보기 

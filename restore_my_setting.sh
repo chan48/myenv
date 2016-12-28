@@ -9,9 +9,9 @@ git config --global alias.ci commit
 git config --global alias.st status
 
 # install common programs
-sh installcommon.zsh
+sh ./installcommon.sh
 #chsh -s /usr/local/bin/zsh
-zsh ./installprezto.sh
+zsh ./installprezto.zsh
 
 # restore brew, pip programs
 sh ./installbybrew.sh
