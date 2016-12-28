@@ -18,7 +18,7 @@ sh ./installbybrew.sh
 sh ./installbypip.sh
 
 # restore shell settings
-cp -fv ./.bash ~/.bashrc
+cp -fv ./.bashrc ~/.bashrc
 cp -fv ./.zshrc ~/.zshrc
 
 # backup vimrc
