@@ -8,8 +8,8 @@ git config --global alias.co checkout
 git config --global alias.ci commit
 git config --global alias.st status
 
-# install zsh and prezto
-brew install zsh
+# install common programs
+sh installcommon.zsh
 #chsh -s /usr/local/bin/zsh
 zsh ./installprezto.sh
 
