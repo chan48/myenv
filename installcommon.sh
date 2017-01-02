@@ -14,12 +14,12 @@ elif [ $(uname) == 'Linux' ]; then
 	# yum 실행보기 
 	yum --version
 	# yum 실행후 exit code 0(SUCCESS) 이라면 사용할수 있다.
-	package_program=""
 	if [ $? == 0 ]; then
 		package_program="yum -y"
 	else
 		package_program="apt-get"
 	fi
+	echo "package_program ${package_program}"
     # centos, ubuntu 모두 있음
     sudo ${package_program} install zsh python-pip ruby
     # ubuntu 에서는 찾을 수 없음

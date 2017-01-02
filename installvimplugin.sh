@@ -15,13 +15,12 @@ elif [ $(uname) == 'Linux' ]; then
 	# yum 실행보기 
 	yum --version
 	# yum 실행후 exit code 0(SUCCESS) 이라면 사용할수 있다.
-	package_program=""
 	if [ $? == 0 ]; then
 		package_program="yum -y"
 	else
 		package_program="apt-get"
 	fi
-	sudo package_program install go
+	sudo ${package_program} install go
 	export GOROOT=/usr/bin/go
 	sudo ${package_program} install ruby mercurial python-dev cmake ctags
 else
