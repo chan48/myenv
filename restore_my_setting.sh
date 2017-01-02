@@ -35,7 +35,7 @@ cp -fv ./.vimrc ~/.vimrc
 # install vimplugin
 sh ./installvimplugin.sh
 
-if [[ $(uname) == 'Darwin' ]]; then
+if [[ $(uname) = 'Darwin' ]]; then
 
     if [ -e '/Applications/iTerm.app' ]; then
         echo "file exists /Applications/iTerm.app"

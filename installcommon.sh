@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # zsh pip brew ruby .. 기본 프로그램 설치
-if [ $(uname) == 'Darwin' ]; then
+if [[ $(uname) = 'Darwin' ]]; then
 	echo 'OSX Environment'
     # brew 설치
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -9,13 +9,13 @@ if [ $(uname) == 'Darwin' ]; then
 	brew install zsh
 	# pip 설치
 	sudo easy_install pip
-elif [ $(uname) == 'Linux' ]; then
+elif [[ $(uname) = 'Linux' ]]; then
 	echo 'Linux Environment'
 	# yum 실행보기 
 	yum --version
 	# yum 실행후 exit code 0(SUCCESS) 이라면 사용할수 있다.
 	package_program=""
-	if [ $? == 0 ]; then
+	if [ $? = 0 ]; then
 		package_program="yum -y"
 	else
 		package_program="apt-get"
@@ -29,7 +29,7 @@ elif [ $(uname) == 'Linux' ]; then
     echo 'compare_version='${compare_version}
     highest_version="$(printf "${cur_version}\n${compare_version}" | sort -r | head -n1)"
     echo 'highest_version='${highest_version}
-    if [ "${highest_version}" == "${compare_version}" ]; then
+    if [[ "${highest_version}" = "${compare_version}" ]]; then
         echo "${compare_version} > ${cur_version}"
         curl -OL https://sourceforge.net/projects/zsh/files/zsh/5.1/zsh-5.1.tar.gz/download
         mv download zsh-5.1.tar.gz
