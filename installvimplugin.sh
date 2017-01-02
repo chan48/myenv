@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ysoftman
 # vim plugin 설정 스크립트
 # sh installvimplugin.sh
