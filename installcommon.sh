@@ -20,7 +20,10 @@ elif [ $(uname) == 'Linux' ]; then
 	else
 		package_program="apt-get"
 	fi
-	sudo ${package_program} install zsh python-pip ruby ncurses ncurses-devel
+    # centos, ubuntu 모두 있음
+	sudo ${package_program} install zsh python-pip ruby
+    # ubuntu 에서는 찾을 수 없음
+    sudo ${package_program} install ncurses ncurses-devel
 	
 	# zsh 버전이 낮으면 소스 다운로드 받아 설치하기
     cur_version="$(zsh --version | cut -d" " -f2)"
