@@ -5,18 +5,18 @@
 # export 를 현재 쉘에 반영하고 싶다면 source installvimplugin.sh
 
 # go, ruby, mercurial, python, cmake, ctags 설치 및 환경변수 설정
-if [[ $(uname) = 'Darwin' ]]; then
+if [ $(uname) == 'Darwin' ]; then
 	echo 'OSX Environment'
 	brew install go
 	export GOROOT=/usr/local/bin/go
 	brew install ruby mercurial python cmake ctags
-elif [[ $(uname) = 'Linux' ]]; then
+elif [ $(uname) == 'Linux' ]; then
 	echo 'Linux Environment'
 	# yum 실행보기 
 	yum --version
 	# yum 실행후 exit code 0(SUCCESS) 이라면 사용할수 있다.
 	package_program=""
-	if [[ $? = 0 ]]; then
+	if [ $? == 0 ]; then
 		package_program="yum -y"
 	else
 		package_program="apt-get"
