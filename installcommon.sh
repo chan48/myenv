@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # zsh pip brew ruby .. 기본 프로그램 설치
 if [ $(uname) == 'Darwin' ]; then

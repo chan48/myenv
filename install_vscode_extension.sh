@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 code --install-extension DotJoshJohnson.xml
 code --install-extension HookyQR.beautify
 code --install-extension PeterJausovec.vscode-docker
