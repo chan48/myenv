@@ -21,7 +21,7 @@ elif [ $(uname) == 'Linux' ]; then
 		package_program="apt-get"
 	fi
     # centos, ubuntu 모두 있음
-	sudo ${package_program} install zsh python-pip ruby
+    sudo ${package_program} install zsh python-pip ruby
     # ubuntu 에서는 찾을 수 없음
     sudo ${package_program} install ncurses ncurses-devel
 	
