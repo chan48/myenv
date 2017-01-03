@@ -1,6 +1,7 @@
 # myenv
 개인 환경 백업 및 복구 자동화 스크립트
-- Mac, CentOS, Ubuntu 환경
+
+Mac, CentOS, Ubuntu 환경에서 사용 
 
 # 사용방법
 - 전체 백업시
