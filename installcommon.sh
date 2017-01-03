@@ -36,10 +36,10 @@ elif [ $(uname) == 'Linux' ]; then
     echo 'highest_version='${highest_version}
     if [ "${highest_version}" == "${compare_version}" ]; then
         echo "${compare_version} > ${cur_version}"
-        curl -OL https://sourceforge.net/projects/zsh/files/zsh/5.1/zsh-5.1.tar.gz/download
-        mv download zsh-5.1.tar.gz
-        tar zxvf zsh-5.1.tar.gz
-        cd zsh-5.1
+        curl -OL https://sourceforge.net/projects/zsh/files/zsh/5.2/zsh-5.2.tar.gz/download
+        mv download zsh-5.2.tar.gz
+        tar zxvf zsh-5.2.tar.gz
+        cd zsh-5.2
         ./configure && make && sudo make install
         /usr/local/bin/zsh --version
     else
