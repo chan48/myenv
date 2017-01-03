@@ -33,6 +33,13 @@ else
 	exit
 fi
 
+# 최신 버전 vim 설치
+git clone https://github.com/vim/vim.git
+cd vim/src
+git pull
+make distclean 
+make
+
 GOPATH=${HOME}/workspace/gopath
 echo GOPATH=${GOPATH}
 

@@ -22,8 +22,10 @@ elif [ $(uname) == 'Linux' ]; then
 	echo "package_program ${package_program}"
     # centos, ubuntu 모두 있음
     sudo ${package_program} install zsh python-pip ruby
-    # ubuntu 에서는 찾을 수 없음
+    # ncurses - yum 에서 설치
     sudo ${package_program} install ncurses ncurses-devel
+    # ncurses - ubuntu 에서 설치
+    sudo ${package_program} install build-essential libncurses5-dev
 	
 	# zsh 버전이 낮으면 소스 다운로드 받아 설치하기
     cur_version="$(zsh --version | cut -d" " -f2)"
