@@ -29,7 +29,7 @@ elif [ $(uname) == 'Linux' ]; then
 	
 	# zsh 버전이 낮으면 소스 다운로드 받아 설치하기
     cur_version="$(zsh --version | cut -d" " -f2)"
-    compare_version="5.0.0"
+    compare_version="5.2.0"
     echo 'cur_version='${cur_version}
     echo 'compare_version='${compare_version}
     highest_version="$(printf "${cur_version}\n${compare_version}" | sort -r | head -n1)"
