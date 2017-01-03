@@ -39,6 +39,7 @@ cd vim/src
 git pull
 make distclean 
 make
+sudo make install
 
 GOPATH=${HOME}/workspace/gopath
 echo GOPATH=${GOPATH}
