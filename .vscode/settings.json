@@ -14,8 +14,6 @@
     "go.goroot": "/usr/local/go",
     "go.gopath": "/Users/ysoftman/workspace/gopath",
 
-    "beautify.onSave": false,
-
     "bookmarks.useStickyBookmarks": true,
     "bookmarks.navigateThroughAllFiles": true,
     "bookmarks.saveBookmarksBetweenSessions": true,

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 code --install-extension DotJoshJohnson.xml
 code --install-extension HookyQR.beautify
 code --install-extension PeterJausovec.vscode-docker
@@ -9,6 +9,7 @@ code --install-extension dcr30.lualinter
 code --install-extension djabraham.vscode-yaml-validation
 code --install-extension donjayamanne.python
 code --install-extension fallenwood.vimL
+code --install-extension haaaad.ansible
 code --install-extension itryapitsin.Scala
 code --install-extension lukehoban.Go
 code --install-extension magicstack.MagicPython
@@ -20,5 +21,6 @@ code --install-extension ms-vscode.cpptools
 code --install-extension ms-vscode.csharp
 code --install-extension ravilang.ravi-debug
 code --install-extension robertohuertasm.vscode-icons
+code --install-extension timonwong.ansible-autocomplete
 code --install-extension wholroyd.jinja
 code --install-extension xabikos.JavaScriptSnippets
