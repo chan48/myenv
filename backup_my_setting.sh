@@ -14,7 +14,8 @@ echo '#!/bin/bash' > ${install_file}
 echo 'sudo pip install --upgrade pip' >> ${install_file}
 printf "sudo pip install " >> ${install_file}
 pip list | awk '{print $1}' | tr '\n' ' ' >> ${install_file}
-echo ' --upgrade' >> ${install_file}
+# --upgrade 필요시에만 사용
+# echo ' --upgrade' >> ${install_file}
 
 # backup my shell settings
 cp -v ~/.bashrc ./
