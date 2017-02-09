@@ -12,8 +12,9 @@ brew list | sort | tr '\n' ' ' >> ${install_file}
 install_file="installbypip.sh"
 echo '#!/bin/bash' > ${install_file}
 echo 'sudo pip install --upgrade pip' >> ${install_file}
-printf "pip install " >> ${install_file}
+printf "sudo pip install " >> ${install_file}
 pip list | awk '{print $1}' | tr '\n' ' ' >> ${install_file}
+echo ' --upgrade' >> ${install_file}
 
 # backup my shell settings
 cp -v ~/.bashrc ./
