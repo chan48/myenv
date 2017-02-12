@@ -9,7 +9,19 @@ git config --global alias.ci commit
 git config --global alias.st status
 
 sh ./installcommon.sh
-#chsh -s /usr/local/bin/zsh
+
+# 현재 유저의 기본 쉘을 zsh 로 변경
+cat /etc/shells > shells
+zsh_path=`cat shells | grep /usr/local/bin/zsh`
+echo $zsh_path
+# null string 이라면  
+if [ -z ${zsh_path} ]; then
+	# /etc/shells 는 >> 를 허용하지 않아 수정 파일로 바꿔친다.
+	echo "/usr/local/bin/zsh" >> shells
+	sudo mv -v shells /etc/shells
+	chsh -s /usr/local/bin/zsh
+fi
+
 zsh ./installprezto.zsh
 
 if [[ $(uname) == 'Darwin' ]]; then
