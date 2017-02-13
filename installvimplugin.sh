@@ -65,20 +65,20 @@ cat ${TEMP_FILE} > ~/.vimrc
 rm -f ${TEMP_FILE}
 
 
-printf '"""""""""" ysoftman_settings_start' >>  ~/.vimrc
+echo '"""""""""" ysoftman_settings_start' >>  ~/.vimrc
 
 ########################
 # vim 패키지(플러그인) 관지자 - pathogen 설치
 # vim-pathogen 을 ~/.vim/autoload 에 다운 받는다
-cd ~/.vim/autoload
-git clone https://github.com/tpope/vim-pathogen.git
-cp -v ./vim-pathogen/autoload/pathogen.vim ./
-echo '
-" pathogen 설정
-" 참고 https://github.com/tpope/vim-pathogen.git 
-execute pathogen#infect()
-filetype plugin indent on
-' >> ~/.vimrc
+#cd ~/.vim/autoload
+#git clone https://github.com/tpope/vim-pathogen.git
+#cp -v ./vim-pathogen/autoload/pathogen.vim ./
+#echo '
+#" pathogen 설정
+#" 참고 https://github.com/tpope/vim-pathogen.git 
+#execute pathogen#infect()
+#filetype plugin indent on
+#' >> ~/.vimrc
 
 # YouCompleteMe
 # python-dev, cmake 설치되어있어야함
@@ -151,38 +151,62 @@ filetype plugin indent on
 # vim 패키지(플러그인) 관지자 - vundle 설치
 # ruby 가 설치되어 있어야함
 # vundle 을 ~/.vim/bundle 에 다운 받는다
-cd ~/.vim/bundle
-git clone https://github.com/VundleVim/Vundle.vim.git
-echo '
-" Vundle 설정
-" 참고 https://github.com/VundleVim/Vundle.vim
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-' >> ~/.vimrc
-# vundle plugin 설정
-echo 'call vundle#begin()
-' >> ~/.vimrc
-echo "Plugin 'VundleVim/Vundle.vim'
-Plugin 'valloric/youcompleteme'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
-Plugin 'fatih/vim-go'
-Plugin 'powerline/fonts'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'joshdick/onedark.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'junegunn/fzf'
-Plugin 'nathanaelkane/vim-indent-guides'
-" >> ~/.vimrc
-echo 'call vundle#end()            " required
-filetype plugin indent on    " required
-' >> ~/.vimrc
+# cd ~/.vim/bundle
+# git clone https://github.com/VundleVim/Vundle.vim.git
+# echo '
+# " Vundle 설정
+# " 참고 https://github.com/VundleVim/Vundle.vim
+# set nocompatible              " be iMproved, required
+# filetype off                  " required
+# set rtp+=~/.vim/bundle/Vundle.vim
+# ' >> ~/.vimrc
+# # vundle plugin 설정
+# echo 'call vundle#begin()
+# ' >> ~/.vimrc
+# echo "Plugin 'VundleVim/Vundle.vim'
+# Plugin 'valloric/youcompleteme'
+# Plugin 'majutsushi/tagbar'
+# Plugin 'scrooloose/nerdtree'
+# Plugin 'fatih/vim-go'
+# Plugin 'powerline/fonts'
+# Plugin 'vim-airline/vim-airline'
+# Plugin 'vim-airline/vim-airline-themes'
+# Plugin 'scrooloose/syntastic'
+# Plugin 'altercation/vim-colors-solarized'
+# Plugin 'joshdick/onedark.vim'
+# Plugin 'kien/ctrlp.vim'
+# Plugin 'junegunn/fzf'
+# Plugin 'nathanaelkane/vim-indent-guides'
+# " >> ~/.vimrc
+# echo 'call vundle#end()            " required
+# filetype plugin indent on    " required
+# ' >> ~/.vimrc
 
-########################
+#######################
+# vim-plug 설치(플러그인 매니저중 플러그인 설치 속도가 가장 빠름)
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+echo "call plug#begin('~/.vim/plugged')
+Plug 'valloric/youcompleteme'
+Plug 'majutsushi/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'fatih/vim-go'
+Plug 'powerline/fonts'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'scrooloose/syntastic'
+Plug 'altercation/vim-colors-solarized'
+Plug 'joshdick/onedark.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf'
+Plug 'nathanaelkane/vim-indent-guides'
+call plug#end()
+:PlugInstall 
+" >> ~/.vimrc
+
+
+
+#######################
 # 사용자 설정
 echo '
 " 사용자 설정
