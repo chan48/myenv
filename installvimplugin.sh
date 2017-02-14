@@ -201,9 +201,8 @@ Plug 'kien/ctrlp.vim'
 Plug 'junegunn/fzf'
 Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
-:PlugInstall 
 " >> ~/.vimrc
-
+vim -c PlugInstall -c qall
 
 
 #######################
