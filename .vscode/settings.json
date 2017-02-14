@@ -34,5 +34,6 @@
 
     "vsicons.dontShowNewVersionMessage": true,
     "editor.wordWrap": true,
-    "editor.renderWhitespace": "none"
+    "editor.renderWhitespace": "none",
+    "editor.fontFamily": "monaco, menlo"
 }
