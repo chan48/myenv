@@ -7,6 +7,7 @@ source ~/.zprezto/init.zsh
 export CLICOLOR=1
 export PATH=$PATH:$HOME:/opt/local/bin;
 export GOPATH=$HOME/workspace/gopath;
+export PYTHONPATH=$PYTHONPATH:/Library/Python/2.7/site-packages 
 export EDITOR=vim
 export VISUAL=vim
 
