@@ -11,22 +11,23 @@ export PYTHONPATH=$PYTHONPATH:/Library/Python/2.7/site-packages
 export EDITOR=vim
 export VISUAL=vim
 
+# for osx
 alias sn='pmset displaysleepnow'
 alias vi='vim'
 alias ll='ls -ahlG'
-alias work='cd /Users/ysoftman/workspace'
-alias testcode='cd /Users/ysoftman/workspace/test_code'
+alias work='cd ~/workspace'
+alias testcode='cd ~/workspace/test_code'
 
-alias usfsupports='cd /Users/ysoftman/workspace/usf-supports'
-alias deploynote='cd /Users/ysoftman/workspace/deploy-note'
-alias usfpc='cd /Users/ysoftman/workspace/usf-vagrant/developer/usfpc'
-alias usfmo='cd /Users/ysoftman/workspace/usf-vagrant/developer/usfmo'
-alias totsearch='cd /Users/ysoftman/workspace/usf-vagrant/developer/shared/to-guest/tot_search'
-alias usfconfig='cd /Users/ysoftman/workspace/usf-vagrant/developer/shared/to-guest/usf-config'
-alias usfansible='cd /Users/ysoftman/workspace/usf-ansible'
-alias usfvagrant='cd /Users/ysoftman/workspace/usf-vagrant'
-alias usfclick='cd /Users/ysoftman/workspace/usfclick-go'
-alias usfysoftman='cd /Users/ysoftman/workspace/usf-ysoftman'
+alias usfsupports='cd ~workspace/usf-supports'
+alias deploynote='cd ~/workspace/deploy-note'
+alias usfpc='cd ~/workspace/usf-vagrant/developer/usfpc'
+alias usfmo='cd ~/workspace/usf-vagrant/developer/usfmo'
+alias totsearch='cd ~/workspace/usf-vagrant/developer/shared/to-guest/tot_search'
+alias usfconfig='cd ~/workspace/usf-vagrant/developer/shared/to-guest/usf-config'
+alias usfansible='cd ~/workspace/usf-ansible'
+alias usfvagrant='cd ~/workspace/usf-vagrant'
+alias usfclick='cd ~/workspace/usfclick-go'
+alias usfysoftman='cd ~/workspace/usf-ysoftman'
 
 alias vgs='vagrant global-status'
 alias startusfpc='usfpc;vagrant up;popd;'
