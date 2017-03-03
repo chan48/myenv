@@ -19,14 +19,14 @@ sh ./restore_my_setting.sh
 sh ./installcommon.sh
 ```
 
-- vim 플러그인 설치
-```bash
-sh ./installvimplugin.sh
-```
-
 - zsh 기반 prezto shell 설치
 ```bash
 zsh ./installprezto.zsh
+```
+
+- vim 플러그인 설치
+```bash
+sh ./installvimplugin.sh
 ```
 
 - pip 로 프로그램 설치
