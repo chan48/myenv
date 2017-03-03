@@ -62,4 +62,4 @@ if [ -z ${zsh_path} ]; then
 	sudo mv -v shells /etc/shells
 	chsh -s /usr/local/bin/zsh
 fi
-
+rm -fv shells
