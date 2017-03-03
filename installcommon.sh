@@ -29,7 +29,7 @@ elif [ $(uname) == 'Linux' ]; then
 	
 	# zsh 버전이 낮으면 소스 다운로드 받아 설치하기
     cur_version="$(zsh --version | cut -d" " -f2)"
-    compare_version="5.2.0"
+    compare_version="5.1.999"
     echo 'cur_version='${cur_version}
     echo 'compare_version='${compare_version}
     highest_version="$(printf "${cur_version}\n${compare_version}" | sort -r | head -n1)"
@@ -49,5 +49,17 @@ elif [ $(uname) == 'Linux' ]; then
 else
 	echo 'Only OS-X or Linux... exit'
 	exit
+fi
+
+# 현재 유저의 기본 쉘을 zsh 로 변경
+cat /etc/shells > shells
+zsh_path=`cat shells | grep /usr/local/bin/zsh`
+echo $zsh_path
+# null string 이라면  
+if [ -z ${zsh_path} ]; then
+	# /etc/shells 는 >> 를 허용하지 않아 수정 파일로 바꿔친다.
+	echo "/usr/local/bin/zsh" >> shells
+	sudo mv -v shells /etc/shells
+	chsh -s /usr/local/bin/zsh
 fi
 
