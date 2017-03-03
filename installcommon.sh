@@ -60,6 +60,7 @@ if [ -z ${zsh_path} ]; then
 	# /etc/shells 는 >> 를 허용하지 않아 수정 파일로 바꿔친다.
 	echo "/usr/local/bin/zsh" >> shells
 	sudo mv -v shells /etc/shells
+    # 또는 수동으로 /etc/passwd 파일 수정
 	chsh -s /usr/local/bin/zsh
 fi
 rm -fv shells
