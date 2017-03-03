@@ -18,7 +18,7 @@ alias ll='ls -ahlG'
 alias work='cd ~/workspace'
 alias testcode='cd ~/workspace/test_code'
 
-alias usfsupports='cd ~workspace/usf-supports'
+alias usfsupports='cd ~/workspace/usf-supports'
 alias deploynote='cd ~/workspace/deploy-note'
 alias usfpc='cd ~/workspace/usf-vagrant/developer/usfpc'
 alias usfmo='cd ~/workspace/usf-vagrant/developer/usfmo'
