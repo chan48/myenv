@@ -198,7 +198,7 @@ Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'joshdick/onedark.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.vim/plugged/fzf', 'do': './install --all' } 
 Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 " >> ~/.vimrc
