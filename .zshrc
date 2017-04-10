@@ -30,14 +30,14 @@ alias usfclick='cd ~/workspace/usfclick-go'
 alias usfysoftman='cd ~/workspace/usf-ysoftman'
 
 alias vgs='vagrant global-status'
-alias startusfpc='usfpc;vagrant up;popd;'
-alias startusfmo='usfmo;vagrant up;popd;'
-alias stopusfpc='usfpc;vagrant halt;popd;'
-alias stopusfmo='usfmo;vagrant halt;popd;'
-alias restartusfpc='usfpc;vagrant reload;popd;'
-alias restartusfmo='usfmo;vagrant reload;popd;'
-alias destroyusfpc='usfpc;vagrant destroy -f;popd;'
-alias destroyusfmo='usfmo;vagrant destroy -f;popd;'
+alias startusfpc='cur_pwd=${PWD} && usfpc && vagrant up && cd ${cur_pwd}'
+alias startusfmo='cur_pwd=${PWD} && usfmo && vagrant up && cd ${cur_pwd}'
+alias stopusfpc='cur_pwd=${PWD} && usfpc && vagrant halt && cd ${cur_pwd}'
+alias stopusfmo='cur_pwd=${PWD} && usfmo && vagrant halt && cd ${cur_pwd}'
+alias restartusfpc='cur_pwd=${PWD} && usfpc && vagrant reload && cd ${cur_pwd}'
+alias restartusfmo='cur_pwd=${PWD} && usfmo && vagrant reload && cd ${cur_pwd}'
+alias destroyusfpc='cur_pwd=${PWD} && usfpc && vagrant destroy -f && cd ${cur_pwd}'
+alias destroyusfmo='cur_pwd=${PWD} && usfmo && vagrant destroy -f && cd ${cur_pwd}'
 
 # for local vagrant server
 alias mo-build='ssh usfmo make -C /hanmail/shared/from-host/tot_search -j 8 all'
@@ -100,6 +100,7 @@ alias pctest='ssh ysoftman3 "make -C ~/src/pc_tot_search test"'
 alias pcupdatedata='ssh hanadmin@ysoftman3 "rm -rf /daum/data/tmp && mkdir -p /daum/data/tmp && 
 /daum/data/download_data.py -d pc -z test -t /daum/data/tmp && 
 rsync -rlpgoDc --delete /daum/data/tmp/ /daum/data/pc_tot_search"'
+
 
 
 
