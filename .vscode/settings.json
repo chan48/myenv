@@ -14,10 +14,8 @@
     "go.goroot": "/usr/local/go",
     "go.gopath": "/Users/ysoftman/workspace/gopath",
 
-    "bookmarks.useStickyBookmarks": true,
     "bookmarks.navigateThroughAllFiles": true,
-    "bookmarks.saveBookmarksBetweenSessions": true,
-
+    
     "window.zoomLevel": 0,
     
     "workbench.statusBar.visible": true,
@@ -33,7 +31,16 @@
     "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
 
     "vsicons.dontShowNewVersionMessage": true,
-    "editor.wordWrap": true,
+    "editor.wordWrap": "on",
     "editor.renderWhitespace": "none",
-    "editor.fontFamily": "monaco, menlo"
+    "editor.fontFamily": "monaco, menlo",
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "vscode-icons",
+    "[cpp]": {
+        "editor.quickSuggestions": false
+    },
+    "[c]": {
+        "editor.quickSuggestions": false
+    },
+    "workbench.welcome.enabled": false
 }

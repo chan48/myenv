@@ -22,6 +22,7 @@ code --install-extension ms-vscode.csharp
 code --install-extension qinjia.view-in-browser
 code --install-extension ravilang.ravi-debug
 code --install-extension robertohuertasm.vscode-icons
+code --install-extension shanoor.vscode-nginx
 code --install-extension timonwong.ansible-autocomplete
 code --install-extension wholroyd.jinja
 code --install-extension xabikos.JavaScriptSnippets

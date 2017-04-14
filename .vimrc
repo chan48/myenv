@@ -21,7 +21,7 @@ Plug 'scrooloose/syntastic'
 Plug 'altercation/vim-colors-solarized'
 Plug 'joshdick/onedark.vim'
 Plug 'kien/ctrlp.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.vim/plugged/fzf', 'do': './install --all' } 
 Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
@@ -45,8 +45,8 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
-" iterm -> non-ascii font 를 powerline 폰트로 변경해야함
-let g:airline_powerline_fonts = 1
+" iterm -> non-ascii font 를 powerline 폰트로 변경 후 사용
+" let g:airline_powerline_fonts = 1
 
 let g:indent_guides_auto_colors = 0
 hi IndentGuidesOdd  ctermbg=black
